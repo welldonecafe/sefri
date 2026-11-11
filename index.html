@@ -264,17 +264,25 @@
             <!-- FORM ENTRY VIEW -->
             <div id="send-form-view">
                 <div class="mb-4 pr-8">
-                    <h2 class="text-3xl font-black text-stone-900 mb-1">Send Me</h2>
+                    <h2 class="text-3xl font-black text-stone-900 mb-1">Who Will Go?</h2>
                     <p class="text-stone-600 text-sm italic leading-relaxed">
                         "Also I heard the voice of the Lord, saying, Whom shall I send, and who will go for us? Then said I, Here am I; send me."
                         <span class="not-italic font-bold text-emerald-700 whitespace-nowrap">&mdash; Isaiah 6:8</span>
                     </p>
 
+                    <!-- Embedded Video: The Great Imbalance -->
+                    <div class="mt-4 rounded-xl overflow-hidden border border-stone-200 shadow-sm bg-stone-100">
+                        <video id="great-imbalance-video" controls class="w-full aspect-video object-cover" poster="/image/og-image.png">
+                            <source src="/media/thegreatimbalance_radical.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
                     <!-- Resource buttons -->
                     <div class="mt-4 flex items-stretch gap-3">
-                        <a href="/media/thegreatimbalance_radical.mp4" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 bg-white text-stone-900 border border-stone-300 text-sm font-bold py-2.5 px-3 rounded-xl hover:border-emerald-600 hover:text-emerald-700 transition-colors">
-                            <i data-lucide="video" class="w-4 h-4 shrink-0"></i>
-                            <span>Watch Video</span>
+                        <a href="https://eepurl.com/jfKowA" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 bg-white text-stone-900 border border-stone-300 text-sm font-bold py-2.5 px-3 rounded-xl hover:border-emerald-600 hover:text-emerald-700 transition-colors">
+                            <i data-lucide="mail-plus" class="w-4 h-4 shrink-0"></i>
+                            <span>Newsletter</span>
                         </a>
                         <a href="/media/SendMe-Pathway-Guide.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 bg-emerald-700 text-white text-sm font-bold py-2.5 px-3 rounded-xl hover:bg-stone-900 transition-colors">
                             <i data-lucide="file-text" class="w-4 h-4 shrink-0"></i>
@@ -409,6 +417,7 @@
         const sendFormView = document.getElementById('send-form-view');
         const sendSuccessView = document.getElementById('send-success-view');
         const sendStatusDiv = document.getElementById('send-form-status');
+        const greatImbalanceVideo = document.getElementById('great-imbalance-video');
 
         // Populate birth year choices (most recent first)
         (function populateBirthYears() {
@@ -432,6 +441,9 @@
         }
 
         function closeSend() {
+            if (greatImbalanceVideo) {
+                greatImbalanceVideo.pause();
+            }
             sendModal.classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
@@ -526,6 +538,9 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success || data.message === FORM_NOT_ACTIVATED_MSG) {
+                    if (greatImbalanceVideo) {
+                        greatImbalanceVideo.pause();
+                    }
                     sendFormView.classList.add('hidden');
                     sendSuccessView.classList.remove('hidden');
                     form.reset();
