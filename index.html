@@ -95,7 +95,7 @@
             <img src="/image/globe.png" alt="SendFriends Logo" class="w-24 h-24 mx-auto mb-4 hover:scale-105 transition-transform duration-300" />
             <h1 class="text-3xl font-black tracking-tight text-stone-900 mb-2">SendFriends.</h1>
             <p class="max-w-[300px] mx-auto text-sm text-stone-600 leading-relaxed">
-                Missionaries of <i>Pioneers USA</i> taking the hope of the Gospel to the ends of the earth.
+                Missionaries of <i>Pioneers USA</i> bringing the hope of the gospel to the unreached.
             </p>
         </div>
 
@@ -112,7 +112,7 @@
                 </div>
             </a>
 
-            <!-- Our Mission (Formerly About Us) -->
+            <!-- Our Mission -->
             <a href="https://sendfriends.org/about.html" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-start w-full p-4 bg-white border border-stone-200 rounded-2xl shadow-sm hover:shadow-md hover:border-emerald-200 transition-all active:scale-[0.98]">
                 <div class="flex items-center gap-4">
                     <div class="w-10 h-10 bg-stone-100 rounded-full flex items-center justify-center text-stone-600 group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-colors">
@@ -193,7 +193,7 @@
             <!-- FORM ENTRY VIEW -->
             <div id="form-view">
                 <div class="mb-4 pr-8">
-                    <h2 id="modal-title" class="text-3xl font-black text-stone-900 mb-1">Hey!</h2>
+                    <h2 id="modal-title" class="text-3xl font-black text-stone-900 mb-1">Hello!</h2>
                     <p id="modal-subtitle" class="text-stone-500 text-sm">Want to join the mission, or just grab a coffee? Drop us a line.</p>
                 </div>
                 
@@ -263,32 +263,33 @@
 
             <!-- FORM ENTRY VIEW -->
             <div id="send-form-view">
+                <!-- Title & Quote (pr-8 so text doesn't collide with top-right X button) -->
                 <div class="mb-4 pr-8">
                     <h2 class="text-3xl font-black text-stone-900 mb-1">Who Will Go?</h2>
                     <p class="text-stone-600 text-sm italic leading-relaxed">
                         "Also I heard the voice of the Lord, saying, Whom shall I send, and who will go for us? Then said I, Here am I; send me."
                         <span class="not-italic font-bold text-emerald-700 whitespace-nowrap">&mdash; Isaiah 6:8</span>
                     </p>
+                </div>
 
-                    <!-- Embedded Video: The Great Imbalance -->
-                    <div class="mt-4 rounded-xl overflow-hidden border border-stone-200 shadow-sm bg-stone-100">
-                        <video id="great-imbalance-video" controls class="w-full aspect-video object-cover" poster="/image/og-image.png">
-                            <source src="/media/thegreatimbalance_radical.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
+                <!-- Embedded Video: The Great Imbalance (Full Width Aligned with Form Fields) -->
+                <div class="mb-4 rounded-xl overflow-hidden border border-stone-200 shadow-sm bg-stone-100">
+                    <video id="great-imbalance-video" controls class="w-full aspect-video object-cover" poster="/image/og-image.png">
+                        <source src="/media/thegreatimbalance_radical.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
 
-                    <!-- Resource buttons -->
-                    <div class="mt-4 flex items-stretch gap-3">
-                        <a href="https://eepurl.com/jfKowA" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 bg-white text-stone-900 border border-stone-300 text-sm font-bold py-2.5 px-3 rounded-xl hover:border-emerald-600 hover:text-emerald-700 transition-colors">
-                            <i data-lucide="mail-plus" class="w-4 h-4 shrink-0"></i>
-                            <span>Newsletter</span>
-                        </a>
-                        <a href="/media/SendMe-Pathway-Guide.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 bg-emerald-700 text-white text-sm font-bold py-2.5 px-3 rounded-xl hover:bg-stone-900 transition-colors">
-                            <i data-lucide="file-text" class="w-4 h-4 shrink-0"></i>
-                            <span>Pre-Launch Guide</span>
-                        </a>
-                    </div>
+                <!-- Resource Buttons (Full Width Aligned with Form Fields) -->
+                <div class="mb-4 flex items-stretch gap-3">
+                    <a href="https://eepurl.com/jfKowA" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 bg-white text-stone-900 border border-stone-300 text-sm font-bold py-2.5 px-3 rounded-xl hover:border-emerald-600 hover:text-emerald-700 transition-colors">
+                        <i data-lucide="mail-plus" class="w-4 h-4 shrink-0"></i>
+                        <span>Newsletter</span>
+                    </a>
+                    <a href="/media/SendMe-Pathway-Guide.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 bg-emerald-700 text-white text-sm font-bold py-2.5 px-3 rounded-xl hover:bg-stone-900 transition-colors">
+                        <i data-lucide="file-text" class="w-4 h-4 shrink-0"></i>
+                        <span>Pre-Launch Guide</span>
+                    </a>
                 </div>
 
                 <form id="send-form" onsubmit="handleSendSubmit(event)" class="space-y-3">
@@ -390,7 +391,7 @@
 
         function openContact() {
             resetFormState();
-            document.getElementById('modal-title').innerText = "Hey!";
+            document.getElementById('modal-title').innerText = "Hello!";
             document.getElementById('modal-subtitle').innerText = "Want to join the mission, or just grab a coffee? Drop us a line.";
             document.getElementById('message-container').classList.remove('hidden');
             document.getElementById('message').required = true;
